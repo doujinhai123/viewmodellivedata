@@ -9,7 +9,9 @@ public class MViewModel extends ViewModel {
 
     MutableLiveData<String> mString;
     MutableLiveData<String> msgString;
+    public MViewModel(){
 
+    }
 
     public MutableLiveData<String> getString(){
         if(mString==null){

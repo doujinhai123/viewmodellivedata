@@ -1,24 +1,40 @@
 package com.example.myfragment;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.imo.ChannelViewModel;
+
 public class MainActivity extends AppCompatActivity {
 
     private MViewModel mViewModel;
     private TextView mTextView;
+    private ChannelViewModel mChannelViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        mChannelViewModel = ViewModelProviders.of(this).get(ChannelViewModel.class);
+        mChannelViewModel.getSubscribeStatus().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                Log.e("MainActivity", "ddddddddd");
+            }
+
+        });
+
+
         findViewById(R.id.btn0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

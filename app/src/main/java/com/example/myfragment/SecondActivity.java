@@ -22,7 +22,7 @@ public class SecondActivity extends AppCompatActivity {
         mViewModel.getString().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                Log.e("MainActivity", "耗时任务结束返回数据");
+                Log.e("SecondActivity", "耗时任务结束返回数据");
                 mTextView.setText(s);
             }
         });

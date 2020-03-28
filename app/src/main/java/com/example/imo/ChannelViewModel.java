@@ -13,6 +13,7 @@ public class ChannelViewModel extends ViewModel {
 
     public ChannelViewModel() {
         channelRepository = ChannelApplication.channelRepository;
+        init("12345");
     }
 
     public void init(String channelId) {
